@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+    <h2>Latest Mars News:</h2>
+    <h4>{{ data.news_title }}</h4>
+    <p>{{ data.news_p }}</p>
+    <br>
+    <div class='row'>
+      <div class='col-md-4'>
+        <h2>Featured Mars Image:</h2>
+        <img src="{{ data.featured_image_url }}" alt="Wow!" width='200px' height='300px'>
+      </div>
+      <div class='col-md-4'>
+        <h2>Current Weather on Mars:</h2>
+        <p>{{ data.mars_weather }}</p>
+      </div>
+      <div class='col-md-4'>
+        <h2>Mars Facts:</h2>
+        {{ data.html_table|safe }}
+      </div>
+    </div>
+    <h2>Mars Hemispheres</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <figure>
+          <img src="{{ data.hemisphere_image_urls[0]['img_url'] }}" alt='Missing' width='300px'>
+          <figcaption>{{ data.hemisphere_image_urls[0]['title'] }}</figcaption>
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <figure>
+          <img src="{{ data.hemisphere_image_urls[1]['img_url'] }}" alt='Missing' width='300px'>
+          <figcaption>{{ data.hemisphere_image_urls[1]['title'] }}</figcaption>
+        </figure>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <figure>
+          <img src="{{ data.hemisphere_image_urls[2]['img_url'] }}" alt='Missing' width='300px'>
+          <figcaption>{{ data.hemisphere_image_urls[2]['title'] }}</figcaption>
+        </figure>
+      </div>
+      <div class="col-md-6">
+        <figure>
+          <img src="{{ data.hemisphere_image_urls[3]['img_url'] }}" alt='Missing' width='300px'>
+          <figcaption>{{ data.hemisphere_image_urls[3]['title'] }}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
